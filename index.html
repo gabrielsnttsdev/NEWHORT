@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewHort WebSite</title>
+    <!--Linking Fonr for icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+  </style>
+  <!-- Header / Navbar -->
+   <header>
+    <nav class="navbar section-content">
+        <a href="#" class="nav-logo">
+          <div class="logo">
+            <h2 class="logo-text">NewH</h2>
+            <img src="assets/logo4.png" alt="Logo Icon" class="logo-icon">
+            <h2 class="logo-text">rt</h2>
+        </a></div>
+        
+        <ul class="nav-menu">
+          <button id="menu-close-button" class="fas fa-times"></button>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">Sobre</a>
+          </li> 
+          <li class="nav-item">
+            <a href="#menu" class="nav-link">Produtos</a>
+          </li>  
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contato</a>
+          </li>  
+        </ul>
+        <div class="header-icons">
+          <i class="ri-search-line" id="search-icon"></i>
+          <div id="cart-icon">
+            <i class="ri-shopping-bag-line" id="cart-icon"></i>
+            <span class="cart-item-count"></span>
+          </div>
+          <i class="ri-user-line" id="user-icon"></i>
+        </div>
+        <button id="menu-open-button" class="fas fa-bars"></button>
+        <div class="header-icons">
+          
+        </div>
+    </nav>
+    <!--User-->
+    <div class="user">
+      <h2>ACESSE SUA CONTA</h2>
+      <input type="email" placeholder="Email...">
+      <input type="password" name="" id="" placeholder="Senha...">
+      <input type="submit" value="Login" class="login-btn">
+      <p>Esqueceu a senha? <a href="#">REDEFINIR AGORA</a></p>
+      <p>Novo na NewHort! <a href="#">CADASTRE-SE</a></p>
+    </div>
+   </header>
+   
+   <main>
+    <!-- Home section -->
+    <section class="hero-section">
+      <div class="section-content">
+        <div class="hero-details">
+          <h2 class="title">Best Hort
+          </h2>
+          <h3 class="subtitle">Melhore suas plantações com <span id="typed"></span></h3>
+          <p class="description">Bem-vindo ao newhort, com você nosso negócio cresce.</p>
+
+          <div class="buttons">
+            <a href="#" class="button order-now">Compre agora</a>
+            <a href="#" class="button contact-us">Contate-nos</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <script
+  src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+  type="module"
+></script>
+
+<dotlottie-player
+  src="https://lottie.host/d728ed78-a386-472e-a560-8c1c53311ac0/36IsY5ltu2.lottie"
+  background="transparent"
+  speed="1"
+  style="width: 500px; height: 500px"
+  loop
+  autoplay
+></dotlottie-player>
+        </div>      
+      </div>
+    </section>
+    <!--Digitação-->
+     <script>
+    const frases = ["o nosso produto!", "tecnologia verde!", "a NewHort!"];
+    let i = 0, j = 0, isDeleting = false;
+
+    function type() {
+      const display = document.getElementById("typed");
+      const current = frases[i];
+
+      if (isDeleting) {
+        display.textContent = current.substring(0, j--);
+        if (j < 0) {
+          isDeleting = false;
+          i = (i + 1) % frases.length;
+        }
+      } else {
+        display.textContent = current.substring(0, j++);
+        if (j > current.length) isDeleting = true;
+      }
+
+      setTimeout(type, isDeleting ? 50 : 90);
+    }
+
+    type();
+  </script>
+
+    <!-- Sobre section -->
+     <section class="about-section" id="about">
+      <div class="section-content">
+        <div class="about-image-wrapper">
+          <img src="assets/sobre1.png" alt="About" class="about-image">
+        </div>
+        <div class="about-details">
+          <h2 class="section-title">Sobre</h2>
+          <p class="text">A NEWHORT é a solução ideal para transformar sua produção agrícola, trazendo inovação e automação para otimizar seu tempo e aumentar a eficiência do seu cultivo. Com tecnologia de ponta, oferecemos ferramentas inteligentes que possibilitam um gerenciamento mais preciso e eficaz das suas plantações.</p>
+          <div class="social-link-list">
+            <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+     </section>
+
+     <!--Carrinho section-->
+     <div class="cart">
+        <h2 class="cart-title">Seu Carrinho</h2>
+        <div class="cart-content">
+          <!-- <div class="cart-box">
+            <img src="assets/ouro.png" alt="cart-img">
+            <div class="cart-detail">
+              <h2 class="cart-product-title">Plano Bronze</h2>
+              <span class="cart-price">R$49.99</span>
+              <div class="cart-quantity">
+                <button id="decrement">-</button>
+                <span class="number">1</span>
+                <button id="increment">+</button>
+              </div>
+            </div>
+            <i class="ri-delete-bin-line cart-remove"></i>
+          </div> -->
+        </div>
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price">$0</div>
+        </div>
+        <button class="btn-buy">Compre Agora</button>
+        <i class="ri-close-line" id="cart-close"></i>
+     </div>
+     <!--Produtos section-->
+    <section class="shop" id="menu">
+      <h1 class="section-title">Produtos</h1>
+      <div class="product-content">
+        <div class="product-box">
+          <div class="img-box">
+            <img src="assets/11.png">
+          </div>
+          <h2 class="product-title">Básico</h2>
+          <div class="price-and-cart">
+            <span class="price">R$29.90</span>
+            <i class="ri-shopping-bag-line add-cart"></i>
+          </div>
+          <button onclick="toggleInfo('infoBasico')">Ver mais</button>
+          <div id="infoBasico" class="info-produto" style="display: none;">
+            <ul>
+              <li>✔️ Acesso ao painel "Minha plantação" com histórico de rega, adubação e pesticidas</li>
+              <li>✔️ Visualização de dados climáticos básicos</li>
+              <li>✔️ Acesso à seção "Ajuda" com dúvidas frequentes</li>
+              <li>✔️ 1 alerta climático diário</li>
+              <li>✔️ Acesso limitado a lojas parceiras</li>
+              <li>❌ Painel climático completo</li>
+              <li>❌ Acesso à seção "Preparação do solo" com instruções inteligentes</li>
+              <li>❌ Alertas de clima personalizados</li>
+              <li>❌ Recomendações básicas de produtos agrícolas</li>
+              <li>❌ Previsões meteorológicas de até 7 dias</li>
+              <li>❌ Alertas de risco agrícola</li>
+              <li>❌ Recomendação inteligente de produtos com base no mercado</li>
+              <li>❌ Consultoria digital automatizada com sugestões de cultivo</li>
+              <li>❌ Acesso prioritário ao suporte</li>
+              <li>❌ Função "Minhas Culturas" com histórico completo por plantio</li>
+              <li>❌ Opção de exportar dados em PDF/Excel para controle agrícola</li>
+           </ul>
+          </div>
+        </div>
+
+        <div class="product-box">
+          <div class="img-box">
+            <img src="assets/22.png">
+          </div>
+          <h2 class="product-title">Padrão</h2>
+          <div class="price-and-cart">
+            <span class="price">R$59.90</span>
+            <i class="ri-shopping-bag-line add-cart"></i>
+          </div>
+          <button onclick="toggleInfo('infoPadrao')">Ver mais</button>
+          <div id="infoPadrao" class="info-produto" style="display: none;">
+            <ul>
+              <li>✔️ Acesso ao painel "Minha plantação" com histórico de rega, adubação e pesticidas</li>
+              <li>✔️ Visualização de dados climáticos básicos</li>
+              <li>✔️ Acesso à seção "Ajuda" com dúvidas frequentes</li>
+              <li>✔️ 1 alerta climático diário</li>
+              <li>✔️ Acesso às lojas parceiras com cupons de até 5%</li>
+              <li>✔️ Painel climático completo</li>
+              <li>✔️ Acesso à seção "Preparação do solo" com instruções inteligentes</li>
+              <li>✔️ Alertas de clima personalizados</li>
+              <li>✔️ Recomendações básicas de produtos agrícolas</li>
+              <li>❌ Previsões meteorológicas de até 7 dias</li>
+              <li>❌ Alertas de risco agrícola</li>
+              <li>❌ Recomendação inteligente de produtos com base no mercado</li>
+              <li>❌ Consultoria digital automatizada com sugestões de cultivo</li>
+              <li>❌ Acesso prioritário ao suporte</li>
+              <li>❌ Função "Minhas Culturas" com histórico completo por plantio</li>
+              <li>❌ Opção de exportar dados em PDF/Excel para controle agrícola</li>
+           </ul>
+          </div>
+        </div>
+
+        <div class="product-box">
+          <div class="img-box">
+            <img src="assets/3foto.png">
+          </div>
+          <h2 class="product-title">Avançado</h2>
+          <div class="price-and-cart">
+            <span class="price">R$99.99</span>
+            <i class="ri-shopping-bag-line add-cart"></i>
+          </div>
+          <button onclick="toggleInfo('infoAvancado')">Ver mais</button>
+          <div id="infoAvancado" class="info-produto" style="display: none;">
+            <ul>
+              <li>✔️ Acesso ao painel "Minha plantação" com histórico de rega, adubação e pesticidas</li>
+              <li>✔️ Visualização de dados climáticos básicos</li>
+              <li>✔️ Acesso à seção "Ajuda" com dúvidas frequentes</li>
+              <li>✔️ 1 alerta climático diário</li>
+              <li>✔️ Cupons de até 10% nas lojas parceiras</li>
+              <li>✔️ Painel climático completo</li>
+              <li>✔️ Acesso à seção "Preparação do solo" com instruções inteligentes</li>
+              <li>✔️ Alertas de clima personalizados</li>
+              <li>✔️ Recomendações básicas de produtos agrícolas</li>
+              <li>✔️ Previsões meteorológicas de até 7 dias</li>
+              <li>✔️ Alertas de risco agrícola</li>
+              <li>✔️ Recomendação inteligente de produtos com base no mercado</li>
+              <li>❌ Consultoria digital automatizada com sugestões de cultivo</li>
+              <li>❌ Acesso prioritário ao suporte</li>
+              <li>❌ Função "Minhas Culturas" com histórico completo por plantio</li>
+              <li>❌ Opção de exportar dados em PDF/Excel para controle agrícola</li>
+           </ul>
+          </div>
+        </div>
+
+        <div class="product-box">
+          <div class="img-box">
+            <img src="assets/4foto.png">
+          </div>
+          <h2 class="product-title">Platina</h2>
+          <div class="price-and-cart">
+            <span class="price">R$149.99</span>
+            <i class="ri-shopping-bag-line add-cart"></i>
+          </div>
+          <button onclick="toggleInfo('infoPlatina')">Ver mais</button>
+          <div id="infoPlatina" class="info-produto" style="display: none;">
+            <ul>
+              <li>✔️ Acesso ao painel "Minha plantação" com histórico de rega, adubação e pesticidas</li>
+              <li>✔️ Visualização de dados climáticos básicos</li>
+              <li>✔️ Acesso à seção "Ajuda" com dúvidas frequentes</li>
+              <li>✔️ 1 alerta climático diário</li>
+              <li>✔️ Cupons de até 15% nas lojas parceiras</li>
+              <li>✔️ Painel climático completo</li>
+              <li>✔️ Acesso à seção "Preparação do solo" com instruções inteligentes</li>
+              <li>✔️ Alertas de clima personalizados</li>
+              <li>✔️ Recomendações básicas de produtos agrícolas</li>
+              <li>✔️ Previsões meteorológicas de até 7 dias</li>
+              <li>✔️ Alertas de risco agrícola</li>
+              <li>✔️ Recomendação inteligente de produtos com base no mercado</li>
+              <li>✔️ Consultoria digital automatizada com sugestões de cultivo</li>
+              <li>✔️ Acesso prioritário ao suporte</li>
+              <li>✔️ Função "Minhas Culturas" com histórico completo por plantio</li>
+              <li>✔️ Opção de exportar dados em PDF/Excel para controle agrícola</li>
+           </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato section -->
+    <section class="contact-section" id="contact">
+      <h2 class="section-title"> Contate-nos </h2>
+      <div class="section-content">
+        <ul class="contact-info-list">
+          <li class="contact-info">
+            <i class="fa-solid fa-location-crosshairs"></i>
+            <p> Rua , 999</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-regular fa-envelope"></i>
+            <p>info@newhortwebsite.com.br</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-solid fa-phone"></i>
+            <p>(16) 1234-4321</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-regular fa-clock"></i>
+            <p>Segunda - Sexta: 9:00 - 17:00</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-regular fa-clock"></i>
+            <p>Sabado e Domingo: Fechado</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-solid fa-globe"></i>
+            <p>www.newhort.com.br</p>
+          </li>
+        </ul>
+
+        <form action="#" class="contact-form">
+          <input type="text" placeholder="Seu nome" class="form-input" required>
+          <input type="email" placeholder="Seu email" class="form-input" required>
+          <textarea placeholder="Sua mensagem" class="form-input" required></textarea>
+          <button class="submit-button">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <!--Rodapé section-->
+    <footer class="footer-section">
+      <div class="class section-content">
+        <p class="class copyright-text">© 2025 NewHort</p>
+
+        <div class="social-link-list">
+          <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+
+        <p class="policy-text">
+          <a href="#" class="policy-link">Política de Privacidade</a>
+          <span class="separator">●</span>
+          <a href="#" class="policy-link">Política de Reembolso</a>
+
+        </p>
+      </div>
+    </footer>
+   </main>
+
+   <script src="script.js"></script>
+</body>
+</html>
