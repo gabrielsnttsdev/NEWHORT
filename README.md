@@ -20,10 +20,3 @@ O objetivo é apresentar um **software voltado à gestão agrícola**, com foco 
 
 ---
 
-## 📷 Imagens
-
-Se quiser, adicione aqui prints do site:
-
-```html
-<img src="![image](https://github.com/user-attachments/assets/7bb0be80-abe8-4918-9734-8d002bd192f2)
-" width="400px" />
